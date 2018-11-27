@@ -75,6 +75,7 @@
 		%>
 			
 		</table><%@page import="java.sql.*,java.util.*"%>
+		</div>
 </body>
 
 

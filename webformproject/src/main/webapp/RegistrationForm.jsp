@@ -89,7 +89,7 @@ a {
     <label for="location"><b>Location</b></label>
     <input type="text" placeholder="Enter Your Base Location" name="location" required>
     <hr>
-    <p>By creating an account you agree to our <a href="">Terms & Privacy</a>.</p>
+    <p>By creating an account you agree to our <a href="">Terms and Privacy</a>.</p>
 
     <button type="submit" value="addemployee" class="registerbtn">Register</button>
   </div>

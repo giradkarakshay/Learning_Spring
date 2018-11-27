@@ -17,36 +17,36 @@ import com.yash.webformproject.service.EmployeeService;
  *
  */
 
-@Service("service")
+@Service("employeeServiceImpl")
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
-	EmployeeDao dao;
+	private EmployeeDao employeeDao;
 
 	public List<Employee> viewEmployeeDetails() {
 
-		return dao.viewEmployeeList();
+		return employeeDao.viewEmployeeList();
 	}
 
 	public void addEmployee(Employee employee) {
 
-		dao.registerEmployee(employee);
+		employeeDao.registerEmployee(employee);
 
 	}
 
 	public int deleteEmployee(Integer id) {
 
-		return dao.deleteEmployee(id);
+		return employeeDao.deleteEmployee(id);
 	}
 
 	public Employee getEmployee(int id) {
 
-		return dao.getEmployee(id);
+		return employeeDao.getEmployee(id);
 	}
 
 	public Employee updateEmployee(Employee employee) {
 		
-		return dao.updateEmployee(employee);
+		return employeeDao.updateEmployee(employee);
 	}
 
 }

@@ -3,7 +3,6 @@
  */
 package com.yash.webformproject.daoimpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -20,7 +19,7 @@ import com.yash.webformproject.model.Employee;
  *
  */
 
-@Repository("dao")
+@Repository("employeeDaoImpl")
 public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Autowired
@@ -37,14 +36,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Transactional
 	public List<Employee> viewEmployeeList() {
 
-		List<Employee> list = new ArrayList<Employee>();
 		System.out.println("hibernateTemplate::" + hibernateTemplate);
-		list = hibernateTemplate.loadAll(Employee.class);
-		System.out.println("In Dao :  " + list);
-		for (Employee employee : list) {
-			System.out.println(employee);
-		}
-		return list;
+		return hibernateTemplate.loadAll(Employee.class);
 
 	}
 

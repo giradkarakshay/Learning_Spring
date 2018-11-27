@@ -101,16 +101,31 @@ public class Employee {
 	}
 
 	/**
+	 * @param domain the domain to set
+	 */
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	/**
+	 * @return the location where the employee currently based on
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	/**
 	 * 
 	 */
 	public Employee() {
 		super();
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", ctc=" + ctc + ", skill=" + skill + ", domain=" + domain
-				+ ", location=" + location + "]";
 	}
 
 	/**
@@ -131,25 +146,71 @@ public class Employee {
 		this.location = location;
 	}
 
-	/**
-	 * @param domain the domain to set
-	 */
-	public void setDomain(String domain) {
-		this.domain = domain;
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", ctc=" + ctc + ", skill=" + skill + ", domain=" + domain
+				+ ", location=" + location + "]";
 	}
 
-	/**
-	 * @return the location where the employee currently based on
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
 	 */
-	public String getLocation() {
-		return location;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(ctc);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((domain == null) ? 0 : domain.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((location == null) ? 0 : location.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((skill == null) ? 0 : skill.hashCode());
+		return result;
 	}
 
-	/**
-	 * @param location the location to set
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	public void setLocation(String location) {
-		this.location = location;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (Double.doubleToLongBits(ctc) != Double.doubleToLongBits(other.ctc))
+			return false;
+		if (domain == null) {
+			if (other.domain != null)
+				return false;
+		} else if (!domain.equals(other.domain))
+			return false;
+		if (id != other.id)
+			return false;
+		if (location == null) {
+			if (other.location != null)
+				return false;
+		} else if (!location.equals(other.location))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (skill == null) {
+			if (other.skill != null)
+				return false;
+		} else if (!skill.equals(other.skill))
+			return false;
+		return true;
 	}
 
 }

@@ -15,7 +15,7 @@ public interface EmployeeDao {
 
 	List<Employee> viewEmployeeList();
 
-	void registerEmployee(Employee employee);
+	public void registerEmployee(Employee employee);
 
 	public int deleteEmployee(Integer id);
 
